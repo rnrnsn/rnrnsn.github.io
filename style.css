@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+html {
+	font-size: 100%;
+}
+
+body {
+	color: #24292e;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+
+#onayami {
+  position: relative;
+  padding: 100px 50px;
+  width: 100%;
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.onym-h2 {
+  position: relative;
+  display: inline-block;
+  margin: 20px 5px 40px 5px;
+  font-size: 2.5em;
+}
+
+.onym-h2:before {
+  content: "";
+  position: absolute;
+  background: #00F0E8;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50%;
+  left: 35%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: -1;
+}
+
+.onym {
+  position: relative;
+  display: flex;
+}
+
+#onayami .onym-item {
+  width: 33%;
+  min-width: 220px;
+  margin: 10px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .5);
+}
+
+.onym-item img {
+  width: 50%;
+  min-width: 150px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#onayami dt {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 20px 10px;
+}
+
+#onayami dd {
+  padding: 0 20px 20px 20px;
+  text-align: left;
+}
+
+/*----------------------------------
+手助け
+----------------------------------*/
+
+#tedasuke {
+  position: relative;
+  padding: 100px 50px;
+  width: 100%;
+  margin: 0;
+  background-image: url(img/24113848_s.jpg);
+  background-size: cover;
+  z-index: -10;
+}
+
+.tdsk-h2 {
+  position: relative;
+  display: inline-block;
+  margin: 20px 5px 40px 5px;
+  font-size: 2.5em;
+  color: white;
+}
+
+#tedasuke ol {
+  counter-reset: number;
+  list-style-type: none!important;
+  padding: 0.5em;
+  width: 50%;
+  margin: 10px auto;
+}
+
+#tedasuke ol li {
+  position: relative;
+  padding: 1em 0.5em 1em 170px;
+  background-color: white;
+  font-size: 2em;
+  margin: 50px auto 50px auto;
+  z-index: -2;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .5);
+}
+
+#tedasuke ol li:before{
+  /* 以下数字をつける */
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  /*数字のデザイン変える*/
+  display:inline-block;
+  background: #00F0E8;
+  font-family: 'Avenir','Arial Black','Arial',sans-serif;
+  font-size: 2em;
+  border-radius: 50%;/*円にする*/
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  /*以下 上下中央寄せのため*/
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+#tedasuke .animation{
+  opacity : 0;
+  visibility: hidden;
+  transition: 1s;
+  transform: translateY(30px);
+}
+/*アニメーション要素までスクロールした時のスタイル*/
+#tedasuke .active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/*----------------------------------
+プラン
+----------------------------------*/
+
+#plan {
+  position: relative;
+  padding: 100px 50px;
+  width: 100%;
+  margin: 0;
+  z-index: -10;
+}
+
+#plan table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 70%;
+  margin: 50px auto;
+  background-color: #ced7e0;
+  font-size: 1.2em;
+}
+
+#plan table th{
+  text-align: center;
+  padding: 10px;
+  border:solid 2px white;
+}
+
+#plan tr:nth-child(even) {
+	background: #d1ebe7;
+}
+
+#plan tr:nth-child(odd) {
+	background: #addbd5;
+}
+
+#plan table td{
+  text-align: center;
+  padding: 20px 10px;
+  border:solid 2px white;
+}
+
+#plan table td a{
+  background-color: #F8CA00;
+  color: white;
+  padding:5px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .5);
+}
+
+#plan .left {
+  text-align: left;
+  font-size: 0.8em;
+}
+
+#plan .mds {
+  width: 20%;
+  background-color: #c47882;
+  color: white;
+  font-size: 0.8em;
+}
+
+/*----------------------------------
+SP
+----------------------------------*/
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    margin-bottom: 70px;
+  }
+  
+  .site-title {
+    margin-top: 20px;
+  }
+  
+  .sec.title {
+    margin-bottom: 40px;
+  }
+}
+
+
