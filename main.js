@@ -1,18 +1,21 @@
-$(function(){
-  $(window).on('load scroll',function (){
-    $('.animation').each(function(){
-      //ターゲットの位置を取得
-      var target = $(this).offset().top;
-      //スクロール量を取得
-      var scroll = $(window).scrollTop();
-      //ウィンドウの高さを取得
-      var height = $(window).height();
-      //ターゲットまでスクロールするとフェードインする
-      if (scroll > target - height){
-        //クラスを付与
-        $(this).addClass('active');
-      }
-    });
-  });
-});
+let fadeInTarget = document.querySelectorAll('.fade-in');
 
+for (let i = 0; i < fadeInTarget.length; i++){
+
+    window.addEventListener('scroll', function(){
+        
+        const rect = fadeInTarget[i].getBoundingClientRect().top;
+        const scroll = window.pageYOffset;
+        const offset = rect + scroll;
+        const windowHeight = window.innerHeight; 
+        
+        if(scroll > offset - windowHeight + 50){
+            fadeInTarget[i].classList.add('scroll-in');
+        }
+        
+        else{
+            fadeInTarget[i].classList.remove('scroll-in');
+        }
+        
+    });
+}
