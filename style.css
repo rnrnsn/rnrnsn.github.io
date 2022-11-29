@@ -184,6 +184,7 @@ span {
   border-spacing: 0;
   table-layout: fixed;
   width: 70%;
+	min-width: 400px;
   margin: 50px auto;
   background-color: #ced7e0;
   font-size: 1.2em;
