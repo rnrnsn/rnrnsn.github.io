@@ -100,7 +100,7 @@ ul {
 }
 
 span {
-  color: gold;
+  color: #A08A1E;
 }
 
 /*----------------------------------
@@ -123,6 +123,7 @@ span {
   margin: 20px 5px 40px 5px;
   font-size: 2.5em;
   color: white;
+  background: linear-gradient(transparent 70%, #A08A1E 70%);
 }
 
 #tdsk ol {
@@ -151,7 +152,7 @@ span {
   content: counter(number);
   /*数字のデザイン変える*/
   display:inline-block;
-  background: #00F0E8;
+  background: #A08A1E;
   font-family: 'Avenir','Arial Black','Arial',sans-serif;
   font-size: 2em;
   border-radius: 50%;/*円にする*/
@@ -176,18 +177,29 @@ span {
   padding: 100px 50px;
   width: 100%;
   margin: 0;
-  z-index: -10;
+  background-image: url(img/background.png);
 }
+
+#plan h2 {
+  position: relative;
+  display: inline-block;
+  margin: 20px 5px 40px 5px;
+  font-size: 2.5em;
+  color: white;
+  background: linear-gradient(transparent 70%, #A08A1E 70%);
+
+}
+
 
 #plan table {
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
   width: 70%;
-	min-width: 450px;
+  min-width: 400px;
   margin: 50px auto;
-  background-color: #ced7e0;
   font-size: 1.2em;
+  color: white;
 }
 
 #plan table th{
@@ -196,13 +208,6 @@ span {
   border:solid 2px white;
 }
 
-#plan tr:nth-child(even) {
-	background: #d1ebe7;
-}
-
-#plan tr:nth-child(odd) {
-	background: #addbd5;
-}
 
 #plan table td{
   text-align: center;
@@ -210,13 +215,18 @@ span {
   border:solid 2px white;
 }
 
-#plan table td a{
-  background-color: #F8CA00;
-  color: white;
-  padding:5px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .5);
+.plan-btn {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+}
+
+.plan-btn:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 
 #plan .left {
@@ -226,8 +236,6 @@ span {
 
 #plan .mds {
   width: 20%;
-  background-color: #c47882;
-  color: white;
   font-size: 0.8em;
 }
 
