@@ -16,12 +16,25 @@ img {
   max-width: 100%;
 }
 
-li {
-  list-style: none;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 
-#onayami {
+
+#mainvisual {
+  position: relative;
+  background: black;
+}
+
+
+/*----------------------------------
+お悩み
+----------------------------------*/
+
+#onym {
   position: relative;
   padding: 100px 50px;
   width: 100%;
@@ -32,14 +45,14 @@ li {
   text-align: center;
 }
 
-.onym-h2 {
+#onym h2 {
   position: relative;
   display: inline-block;
   margin: 20px 5px 40px 5px;
   font-size: 2.5em;
 }
 
-.onym-h2:before {
+#onym h2:before {
   content: "";
   position: absolute;
   background: #00F0E8;
@@ -53,13 +66,14 @@ li {
   z-index: -1;
 }
 
-.onym {
+#onym .box {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 }
 
-#onayami .onym-item {
-  width: 33%;
+#onym .item {
+  width: 30%;
   min-width: 220px;
   margin: 10px;
   background-color: white;
@@ -67,29 +81,33 @@ li {
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .5);
 }
 
-.onym-item img {
+#onym .item img {
   width: 50%;
   min-width: 150px;
   margin: 0 auto;
   padding: 10px;
 }
 
-#onayami dt {
+#onym dt {
   font-size: 1.5em;
   font-weight: bold;
   padding: 20px 10px;
 }
 
-#onayami dd {
+#onym dd {
   padding: 0 20px 20px 20px;
   text-align: left;
+}
+
+span {
+  color: gold;
 }
 
 /*----------------------------------
 手助け
 ----------------------------------*/
 
-#tedasuke {
+#tdsk {
   position: relative;
   padding: 100px 50px;
   width: 100%;
@@ -99,7 +117,7 @@ li {
   z-index: -10;
 }
 
-.tdsk-h2 {
+#tdsk h2 {
   position: relative;
   display: inline-block;
   margin: 20px 5px 40px 5px;
@@ -107,25 +125,26 @@ li {
   color: white;
 }
 
-#tedasuke ol {
+#tdsk ol {
   counter-reset: number;
   list-style-type: none!important;
   padding: 0.5em;
   width: 50%;
+  min-width: 350px;
   margin: 10px auto;
 }
 
-#tedasuke ol li {
+#tdsk ol li {
   position: relative;
-  padding: 1em 0.5em 1em 170px;
+  padding: 1em 0.5em 1em 120px;
   background-color: white;
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 50px auto 50px auto;
   z-index: -2;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .5);
 }
 
-#tedasuke ol li:before{
+#tdsk ol li:before{
   /* 以下数字をつける */
   position: absolute;
   counter-increment: number;
@@ -137,27 +156,14 @@ li {
   font-size: 2em;
   border-radius: 50%;/*円にする*/
   left: 20px;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   text-align: center;
   /*以下 上下中央寄せのため*/
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 0;
-}
-
-#tedasuke .animation{
-  opacity : 0;
-  visibility: hidden;
-  transition: 1s;
-  transform: translateY(30px);
-}
-/*アニメーション要素までスクロールした時のスタイル*/
-#tedasuke .active{
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
 }
 
 
@@ -225,21 +231,181 @@ li {
 }
 
 /*----------------------------------
-SP
+問合せ
 ----------------------------------*/
 
-@media screen and (max-width: 600px) {
-  .wrapper {
-    margin-bottom: 70px;
+#contact {
+  width: 60%;
+  margin: 40px auto;
+}
+
+#contact h2 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.Form {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+@media screen and (max-width: 480px) {
+  .Form {
+    margin-top: 40px;
   }
-  
-  .site-title {
-    margin-top: 20px;
+}
+.Form-Item {
+
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
   }
-  
-  .sec.title {
-    margin-bottom: 40px;
+}
+.Form-Item:nth-child(5) {
+
+}
+.Form-Item-Label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label {
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+}
+.Form-Item-Label.isMsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label.isMsg {
+    margin-top: 0;
+  }
+}
+.Form-Item-Label span {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #545454;
+  color: #fff;
+  font-size: 14px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label span {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+  }
+}
+.Form-Item-Input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Item-Textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Textarea {
+    margin-top: 18px;
+    margin-left: 0;
+    height: 200px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Btn {
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background: #545454;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Btn {
+    margin-top: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 160px;
+    font-size: 16px;
   }
 }
 
+/*----------------------------------
+PC
+----------------------------------*/
+
+@media screen and (min-width: 481px) {
+  img {
+    max-width: 960px;
+  }
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+}
 
